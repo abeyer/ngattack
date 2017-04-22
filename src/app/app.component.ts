@@ -9,9 +9,13 @@ import { HeroService } from './hero.service';
   providers: [HeroService],
   template: `
     <h1>{{title}}</h1>
-    <hero-list [heroes]="heroes"></hero-list>
-    <hero-detail [hero]="selectedHero"></hero-detail>
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
   `,
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
